@@ -1,2 +1,25 @@
 # trabalhoWeb_Django
-Esse repositório contém o trabalho da matéria de desenvolvimento web, no curso de graduação em ciência da computação. 
+Esse repositório contém o trabalho da matéria de desenvolvimento web, no curso de graduação em ciência da computação. A aplicação é uma loja, a qual possui o intuito de fornecer a venda de livros acessíveis. 
+
+# Getting Started
+
+First clone the repository from Github and switch to the new directory:
+
+    $ git clone git@github.com/USERNAME/{{ project_name }}.git
+    $ cd {{ project_name }}
+
+Activate the virtualenv for your project.
+
+Install project dependencies:
+
+    $ pip install -r requirements/local.txt
+
+
+Then simply apply the migrations:
+
+    $ python manage.py migrate
+
+
+You can now run the development server:
+
+    $ python manage.py runserver
