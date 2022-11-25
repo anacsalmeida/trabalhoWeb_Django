@@ -1,0 +1,39 @@
+/* ***********************************
+ *
+ * >>> VARS
+ *
+ * ***********************************/
+
+/*Import Font*/
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Alkalami&display=swap');
+
+:root {
+    /* COLORS */
+    --principal-color: #20416B;
+    --second-color: #011C40;
+    --third-color: #032859;
+    --fourth-color: #074973;
+    --fifth-color: #08678C;
+    --sixth-color: #D9D9D9;
+    --seven-color: #038C3E;
+    --height-color: #0CF25D;
+    --text-white-color: white;
+    --text-gray-color: #777;
+    --text-dark-color: black;
+
+    /* FONTS */
+    --title-text: 'Abyssinica SIL', serif;
+    --text-font: 'Alkalami', serif;
+    --title-header-height: 40px;
+    --subtitle-height: 32px;
+    --text-height: 28px;
+    --responsive-title-height: 34px;
+    --responsive-subtitle-height: 14px;
+    --responsive-text-height: 24px;
+
+    /* IMAGES */
+
+
+    /* OTHERS */
+    --box-shadow: 1px 6px 20px 7px rgba(0, 0, 0, 0.5);
+}

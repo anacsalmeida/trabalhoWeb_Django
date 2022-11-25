@@ -1,0 +1,36 @@
+<header class="header">
+    <h1>BOOKFLIX</h1>
+    <nav class="nav d-flex">
+        <a href="/">Página Principal</a>
+        <a href="/produtos">Produtos</a>
+        <a href="/contato">Entre em contato</a>
+        <a href="/sobre">Sobre nós</a>
+
+        {% if not user.is_anonymous %}
+        <ul class="list-adm d-flex">
+            <li class="list-adm-li"><a href="/admin/auth/user/">Usuários</a></li>
+
+            <li class="list-adm-li"><a href="/admin/produtos/produto/">Produtos</a></li>
+
+            <li class="list-adm-li"><a href="/admin/produtos/categoria/">Categoria</a></li>
+
+            <li class="list-adm-li"><a href="/admin/pedidos/pedido/">Pedidos</a></li>
+
+            <li class="list-adm-li">{% with quantidade_itens=carrinho|length %}
+                {% if quantidade_itens > 0 %}
+                Seu carrinho de compras:
+                <a href="{% url 'carrinho:detalhes_carrinho' %}">{{ quantidade_itens }}
+                    produto{{ quantidade_itens|pluralize }} - R${{ carrinho.get_total_geral }}</a>
+                {% else %}
+                 Seu carrinho está vazio.
+                {% endif %}
+                {% endwith %}
+            </li>
+        </ul>
+
+
+        {% endif %}
+
+    </nav>
+
+</header>

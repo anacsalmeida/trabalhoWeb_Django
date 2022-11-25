@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="form-pagar ">
+    <h1>Finalizar Compra</h1>
+    <div class="total">
+        <h3>Seu Pedido:</h3>
+        <ul>
+            {% for item in carrinho %}
+            <li>
+                {{ item.produto.nome }}: {{ item.quantidade }} x R$ {{ item.preco }} =
+                <span>R$ {{ item.subtotal }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <p>Total Geral: R$ {{ carrinho.get_total_geral }}</p>
+
+    </div>
+
+    <div class="dados ">
+        <form  action="." method="post" class="order ">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Enviar pedido</button>
+        </form>
+
+    </div>
+</div>
+
+<footer class="footer container-fluid">
+        <div class="row footer-all-divs">
+            <div class="col-3 footer-div">
+                <p>About Us
+                </p>
+                <p>Press
+                </p>
+                <p>FAQs</p>
+            </div>
+            <div class="col-3 footer-div">
+                <p>Terms & Conditions
+                </p>
+                <p>Ad Choices
+                </p>
+                <p>Privacy & Cookies</p>
+            </div>
+            <div class="col-3 footer-div">
+                <p>Children's Privacy Policy
+                </p>
+                <p>Legals
+                </p>
+                <!-- <p>FAQs</p> -->
+            </div>
+            <div class="col-3 footer-imgs">
+                <img src="static/img/instagram.png" alt="">
+                <img src="static/img/gmail.png" alt="">
+                <img src="static/img/twitter.png" alt="">
+                <img src="static/img/open-book.png" alt="">
+            </div>
+        </div>
+
+    </footer>
+{% endblock conteudo %}
+

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="detalhes d-flex flex-row">
+    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+    <div class="detalhes-text">
+        <h3 class="titulo">
+            <a href="{{ produto.get_absolute_url }}">{{ produto.nome }}</a>
+            <p> &nbspR${{ produto.preco }}</p> </h3>
+
+        <p>{{ produto.descricao|safe|linebreaksbr }}</p>
+        <form class="form-carrinho" action="{% url 'carrinho:adicionar_ao_carrinho' produto.id %}" method="post">
+            {{ form_produto_carrinho }}
+            {% csrf_token %}
+            <input type="submit" value="Adicionar ao carrinho">
+        </form>
+    </div>
+</div>
+
+
+<footer class="footer container-fluid">
+        <div class="row footer-all-divs">
+            <div class="col-3 footer-div">
+                <p>About Us
+                </p>
+                <p>Press
+                </p>
+                <p>FAQs</p>
+            </div>
+            <div class="col-3 footer-div">
+                <p>Terms & Conditions
+                </p>
+                <p>Ad Choices
+                </p>
+                <p>Privacy & Cookies</p>
+            </div>
+            <div class="col-3 footer-div">
+                <p>Children's Privacy Policy
+                </p>
+                <p>Legals
+                </p>
+                <!-- <p>FAQs</p> -->
+            </div>
+            <div class="col-3 footer-imgs">
+                <img src="static/img/instagram.png" alt="">
+                <img src="static/img/gmail.png" alt="">
+                <img src="static/img/twitter.png" alt="">
+                <img src="static/img/open-book.png" alt="">
+            </div>
+        </div>
+
+    </footer>
+{% endblock conteudo %}
